@@ -16,9 +16,17 @@ This project aims to:
 ## Features
 
 ### Geocoding (Python)
-- A Python script (`Geocode.py`) processes and geocodes addresses using OpenCage.
-- Handles inconsistencies in data (e.g., intersections or ranges like "FROM X TO Y").
-- Saves geocoded results in a AllMenu2012-2023_geocoded_full.csv for use in further analysis.
+- **Single Addresses**:  
+  A Python script (`Geocode.py`) processes and geocodes addresses the OpenCage API.
+
+- **Street Segments**:  
+  Extracts the midpoint of segments specified with "FROM" and "TO."
+
+- **Intersections**:  
+  Calculates the midpoint of two intersecting streets.
+
+- **Defaults**:  
+  Falls back to Chicago’s center (`41.8781, -87.6298`) if geocoding fails.
 
 ### Interactive Web App (R Shiny)
 - Explore how each ward allocates menu money through a dynamic and user-friendly interface.
