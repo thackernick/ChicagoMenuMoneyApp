@@ -6,7 +6,7 @@ Parsing, cleaning, geocoding, and visualizing Chicago's menu money expenditures 
 
 Each year, every member of Chicago's city council is allocated $1.5 million in "menu money" to fund capital improvements in their ward. These funds can be spent on streets, sidewalks, parks, lighting, and more. While this system gives alderpersons the flexibility to address local needs, it has also raised concerns about transparency and misuse. Historically, menu money expenditures have been published in large, unorganized PDFs, making it difficult for the public to understand how funds are allocated.
 
-This project aims to change that:
+This project aims to:
 1. **Geocoding**: Locations of expenditures are cleaned and geocoded using a Python script.
 2. **Visualization**: A Shiny app in R provides an interactive tool to explore spending by ward, year, and category.
 3. **Empowerment**: By making the data accessible, the project encourages public engagement, investigative reporting, and policy analysis.
