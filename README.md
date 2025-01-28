@@ -16,7 +16,7 @@ This project aims to change that:
 ## Features
 
 ### Geocoding (Python)
-- A Python script (`Geocode.py`) processes and geocodes addresses using OpenStreetMap.
+- A Python script (`Geocode.py`) processes and geocodes addresses using OpenCage.
 - Handles inconsistencies in data (e.g., intersections or ranges like "FROM X TO Y").
 - Saves geocoded results in a AllMenu2012-2023_geocoded_full.csv for use in further analysis.
 
@@ -32,30 +32,17 @@ This project aims to change that:
 ## Getting Started
 
 ### Prerequisites
-- **Python**:
-  - Install the required packages listed in `requirements.txt`:
-    ```bash
-    pip install -r requirements.txt
-    ```
-- **R/R Studio**:
-  - Ensure the following R packages are installed:
-    - `shiny`
-    - `tidyverse`
-    - `leaflet`
-    - `ggplot2`
-    - `sf`
+- **R** (version 4.0 or higher recommended)
+- **RStudio** (optional but recommended)
+- R packages: `shiny`, `dplyr`, `ggplot2`, `leaflet`, `DT`, `readr`, `tidyr`, etc.
 
 ### Files in this Repository
-1. **`menu_money_geocode.py`**:
+1. **`Geocode.py`**:
    - Python script for geocoding menu money data.
 2. **`menu_money_app.R`**:
    - Shiny app for visualizing menu money expenditures.
-3. **`AllMenu2012-2023.csv`**:
-   - Cleaned and categorized menu money dataset.
-4. **`requirements.txt`**:
-   - Python dependencies for geocoding.
-5. **`README.md`**:
-   - This document, detailing the project and its components.
+3. **`AllMenu2012-2023_geocoded_full.csv`**:
+   - Geocodes addresses using OpenStreetMap
 
 ---
 
@@ -66,6 +53,11 @@ You can access the interactive web app here:
 **[Chicago Menu Money Visualization App](https://ragtimefed.shinyapps.io/chicagomenuapp/)**
 
 
+### Running the Shiny App Locally
+
+1. **Clone the Repository**  
+   ```bash
+   git clone https://github.com/your-username/ChicagoMenuMoneyApp.git
 
 
 # Credits
