@@ -18,13 +18,13 @@ This project aims to change that:
 ### Geocoding (Python)
 - A Python script (`Geocode.py`) processes and geocodes addresses using OpenStreetMap.
 - Handles inconsistencies in data (e.g., intersections or ranges like "FROM X TO Y").
-- Saves geocoded results in a CSV for use in further analysis.
+- Saves geocoded results in a AllMenu2012-2023_geocoded_full.csv for use in further analysis.
 
 ### Interactive Web App (R Shiny)
 - Explore how each ward allocates menu money through a dynamic and user-friendly interface.
 - Key Features:
   - Interactive map showing expenditures by category and location.
-  - Visualizations (e.g., bar charts, pie charts) summarizing spending trends.
+  - Visualizations (bar chart) summarizing spending trends.
   - Filter by ward, year, or category for detailed insights.
 
 ---
@@ -61,11 +61,10 @@ This project aims to change that:
 
 ## Running the Project
 
-### Geocoding
-1. Navigate to the directory containing `menu_money_geocode.py`.
-2. Run the script:
-   ```bash
-   python menu_money_geocode.py
+### Access the Shiny App
+You can access the interactive web app here:  
+**[Chicago Menu Money Visualization App](https://ragtimefed.shinyapps.io/chicagomenuapp/)**
+
 
 
 
