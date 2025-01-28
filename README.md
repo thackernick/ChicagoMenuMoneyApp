@@ -69,4 +69,4 @@ You can access the interactive web app here:
 
 
 # Credits
-Original methodology and code by [Jake J. Smith](http://www.jakejsmith.com) & [Andres Fonseca](https://github.com/fonsecaa) Python geocoding and Shiny app integration by contributors.
+Original methodology and code by [Jake J. Smith](http://www.jakejsmith.com) & [Andres Fonseca](https://github.com/fonsecaa) Python geocoding and Shiny app integration by [Nicholas Thacker](https://github.com/thackernick).
