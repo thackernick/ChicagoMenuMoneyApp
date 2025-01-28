@@ -1,46 +1,73 @@
 # Democratizing Chicago's Menu Money Data
-Parsing, cleaning, and categorizing Chicago's menu money expenditures.
 
-# Description
-Each year, every member of Chicago's city council  gets $1.5 million in "menu money"  to spend on capital improvement in their ward. Some alderpersons spend this money on streets and sidewalks, while others use it to fund park upkeep, bike lanes, or art projects. The alderperson has enormous discretion over how this money gets spent -- and, in the past, menu money has been at the center of [bribery and corruption scandals](https://www.chicagobusiness.com/government/chicago-ald-carrie-austin-indicted-bribery-charges). Yet the city only publishes menu money expenditures in massive, unsightly, and inconsistently organized PDFs buried in the city website. Because of this inaccessibility, it has historically been difficult to scrutinize how menu money is actually spent. 
+Parsing, cleaning, geocoding, and visualizing Chicago's menu money expenditures with Python and R.
 
-This project aims to change that, by making the data public in a simple spreadsheet and sorting each line item into one of nine broad categories. The bigger goal: to empower the public to finally understand how their tax dollars are being spent, allow reporters to sniff out suspicious patterns, and help social scientists study how dollars get allocated at the hyper-micro level.
+## Description
 
-# Getting Started
-If you just want the final cleaned and categorized data, you'll find that in the [AllMenu2012-2023](AllMenu2012-2023.csv) file. Enjoy!
+Each year, every member of Chicago's city council is allocated $1.5 million in "menu money" to fund capital improvements in their ward. These funds can be spent on streets, sidewalks, parks, lighting, and more. While this system gives alderpersons the flexibility to address local needs, it has also raised concerns about transparency and misuse. Historically, menu money expenditures have been published in large, unorganized PDFs, making it difficult for the public to understand how funds are allocated.
 
-If you want to run or play with the code, you'll need R/R Studio with the following packages installed: 
-- stringr
-- pdftools
-- tidyverse
-- dplyr
+This project aims to change that:
+1. **Geocoding**: Locations of expenditures are cleaned and geocoded using a Python script.
+2. **Visualization**: A Shiny app in R provides an interactive tool to explore spending by ward, year, and category.
+3. **Empowerment**: By making the data accessible, the project encourages public engagement, investigative reporting, and policy analysis.
 
-# Methodology
-## Cleaning and Categorization 
-[Expenditure PDFs](menu-money-pdfs/) from each menu money year are read in and the necessary lines are subsetted and retained based on the architecture of the PDF from that year. All years are appended together. For each of the nine categories, a list of preliminary terms most commonly associated with the category is defined (e.g., "street," "alley," "resurfacing," etc. for Streets & Transportation; "artwork," "sculpture," "fountain," etc. for Arts & Beautification). Each line item is then preliminarily categorized by searching for any of those terms in the cleaned 'program' or 'description' columns of the PDF-derived data. 
+---
 
-## Data Validation and Correction
-To ensure accuracy, the totals for each ward-year are computed and compared to the totals listed in the original PDFs. The sources of any discrepancies are identified and corrected on a case-by-case basis. Next, programs with a small number of line-items are reviewed to ensure they have been categorized correctly. For each category, a new list of line item-specific "hand correction" terms is defined which are then used to override original classifications where necessary. After the reclassification is complete, final ward-year totals are reviewed again to ensure that they match the PDFs. Finally, for each menu money year in the dataset two wards were randomly selected for a line-by-line manual review.
+## Features
 
-## Categorization Strategy
-Because many expenditures could reasonably be placed in several categories, the following hierarchy was applied in category determinations to ensure consistency: 
-1. Security Cameras
-2. Schools & Libraries
-3. Parks & Recreation
-4. Beautification
-5. Streets & Transportation
-6. Lighting 
-7. Plants, Gardens, & Sustainability
-8. Bike Infrastructure
-9. Miscellaneous
+### Geocoding (Python)
+- A Python script (`menu_money_geocode.py`) processes and geocodes addresses using OpenStreetMap.
+- Handles inconsistencies in data (e.g., intersections or ranges like "FROM X TO Y").
+- Saves geocoded results in a CSV for use in further analysis.
 
-In other words, a security camera placed in a park was categorized as "Security Cameras" rather than "Parks & Recreation." Upkeep to a school playground is categorized as "Schools & Libraries" rather than "Parks & Recreation"; similarly, a mural in a school building is categorized as "Schools & Libraries" rather than "Beautification." A traffic light is always categorized as "Streets & Transportation" rather than "Lighting."
+### Interactive Web App (R Shiny)
+- Explore how each ward allocates menu money through a dynamic and user-friendly interface.
+- Key Features:
+  - Interactive map showing expenditures by category and location.
+  - Visualizations (e.g., bar charts, pie charts) summarizing spending trends.
+  - Filter by ward, year, or category for detailed insights.
 
-# What Do I Do With This?
-Whatever you like. But here are a few ideas for projects that could really make the most of this data:
-- An interactive web app where users can select their ward and see how their menu money was spent last year  
-- Mapping expenditures by category (which might require cleaning up and geocoding addresses)
-- Investigating whether participatory budgeting has actually changed how wards spend money (and, if so, how)
+---
+
+## Getting Started
+
+### Prerequisites
+- **Python**:
+  - Install the required packages listed in `requirements.txt`:
+    ```bash
+    pip install -r requirements.txt
+    ```
+- **R/R Studio**:
+  - Ensure the following R packages are installed:
+    - `shiny`
+    - `tidyverse`
+    - `leaflet`
+    - `ggplot2`
+    - `sf`
+
+### Files in this Repository
+1. **`menu_money_geocode.py`**:
+   - Python script for geocoding menu money data.
+2. **`menu_money_app.R`**:
+   - Shiny app for visualizing menu money expenditures.
+3. **`AllMenu2012-2023.csv`**:
+   - Cleaned and categorized menu money dataset.
+4. **`requirements.txt`**:
+   - Python dependencies for geocoding.
+5. **`README.md`**:
+   - This document, detailing the project and its components.
+
+---
+
+## Running the Project
+
+### Geocoding
+1. Navigate to the directory containing `menu_money_geocode.py`.
+2. Run the script:
+   ```bash
+   python menu_money_geocode.py
+
+
 
 # Credits
-[Jake J. Smith](http://www.jakejsmith.com) developed the code and methodology. Special thanks to [Andres Fonseca](https://github.com/fonsecaa) for critical early contributions and for supporting a tiny widdle baby R user.
+Original methodology and code by [Jake J. Smith](http://www.jakejsmith.com) & [Andres Fonseca](https://github.com/fonsecaa) Python geocoding and Shiny app integration by contributors.
