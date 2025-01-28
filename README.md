@@ -16,7 +16,7 @@ This project aims to change that:
 ## Features
 
 ### Geocoding (Python)
-- A Python script (`menu_money_geocode.py`) processes and geocodes addresses using OpenStreetMap.
+- A Python script (`Geocode.py`) processes and geocodes addresses using OpenStreetMap.
 - Handles inconsistencies in data (e.g., intersections or ranges like "FROM X TO Y").
 - Saves geocoded results in a CSV for use in further analysis.
 
