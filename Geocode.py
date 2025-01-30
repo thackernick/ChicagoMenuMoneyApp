@@ -192,7 +192,7 @@ for group in year_ward_groups.values():
 folium.LayerControl().add_to(chicago_map)
 
 # Save the map to an HTML file
-map_output_path = r"C:\Users\17049\OneDrive\Documents\R\chicago_geocoded_map.html"  # Replace with your desired output path
+map_output_path =  # Replace with your desired output path
 chicago_map.save(map_output_path)
 
 print("Map with toggle menu created and saved to:", map_output_path)
