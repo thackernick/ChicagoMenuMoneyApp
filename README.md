@@ -29,11 +29,11 @@ This project aims to:
   Falls back to Chicago’s center (`41.8781, -87.6298`) if geocoding fails.
 
 ### Interactive Web App (R Shiny)
-- Explore how each ward allocates menu money through a dynamic and user-friendly interface.
+- Explore how each ward allocates menu money.
 - Key Features:
   - Interactive map showing expenditures by category and location.
   - Visualizations (bar chart) summarizing spending trends.
-  - Filter by ward, year, or category for detailed insights.
+  - Filter by ward/year.
 
 ---
 
