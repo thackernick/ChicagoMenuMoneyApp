@@ -11,6 +11,10 @@ This project aims to:
 2. **Visualization**: A Shiny app in R provides an interactive tool to explore spending by ward, year, and category.
 3. **Empowerment**: By making the data accessible, the project encourages public engagement, investigative reporting, and policy analysis.
 
+### Access the Shiny App
+You can access the interactive web app here:  
+**[Chicago Menu Money Visualization App](https://ragtimefed.shinyapps.io/chicagomenuapp/)**
+
 ---
 
 ## Features
@@ -54,11 +58,7 @@ This project aims to:
 
 ---
 
-## Running the Project
 
-### Access the Shiny App
-You can access the interactive web app here:  
-**[Chicago Menu Money Visualization App](https://ragtimefed.shinyapps.io/chicagomenuapp/)**
 
 
 ### Running the Shiny App Locally
